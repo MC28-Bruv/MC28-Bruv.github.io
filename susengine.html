@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SUS Engine</title>
+</head>
+<body>
+<script>
+  // URL to the raw index.html in your GitHub repo
+  // Replace USERNAME, REPO, and BRANCH below with your actual repo info
+  const rawUrl = 'https://raw.githubusercontent.com/MC28-Bruv/sus_engine/refs/heads/main/index.html';
+
+  fetch(rawUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to fetch index.html');
+      return response.text();
+    })
+    .then(html => {
+      // Replace entire current document with the fetched HTML content
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch(error => {
+      document.body.innerHTML = '<h1>Failed to load content</h1><p>' + error.message + '</p>';
+      console.error(error);
+    });
+</script>
+</body>
+</html>
