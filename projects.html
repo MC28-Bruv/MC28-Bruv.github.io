@@ -68,6 +68,22 @@
             margin-top: 10px;
         }
 
+        /* 🔍 Searchbar styling */
+        #searchbar {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #searchbar:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 6px rgba(41, 128, 185, 0.3);
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -84,6 +100,9 @@
     <h1>These are my projects!</h1>
     <p>Go ahead and look at them :3</p>
 
+    <!-- 🔍 Search bar -->
+    <input type="text" id="searchbar" placeholder="Search projects..." />
+
     <div class="section">
         <h1>Games</h1>
 
@@ -95,7 +114,8 @@
 
         <div class="card">
             <h2>The Candled One</h2>
-            <p>As you watch TV for a bit, the news comes on and informs you of a phenomenon titled the Candled One. There's a knock at your window.</p>
+            <p>As you watch TV for a bit, the news comes on and informs you of a phenomenon titled the Candled One. There's a
+                knock at your window.</p>
             <p>Made for the 2024 Jame Gam #44, placing #29</p>
             <iframe frameborder="0" src="https://itch.io/embed/3107500?bg_color=4a4a52&amp;fg_color=3b3e9d&amp;link_color=f5fa5b&amp;border_color=3f3f3f" width="552" height="167">
                 <a href="https://mc28.itch.io/the-candled-one">The Candled One by MC28</a>
@@ -113,7 +133,8 @@
 
         <div class="card">
             <h2>Sunny Town (NEW!!!)</h2>
-            <p>Hello! I am John Marker. A seller on Ebay had a cartridge for sale of some old GameBoy game made by the short lived ValeSoft Games. When you play it, however, it is not a happy town.</p>
+            <p>Hello! I am John Marker. A seller on Ebay had a cartridge for sale of some old GameBoy game made by the short
+                lived ValeSoft Games. When you play it, however, it is not a happy town.</p>
             <a href="https://mc28-bruv.github.io/happy-town/">Play it online here!</a>
         </div>
 
@@ -162,6 +183,34 @@
             <a href="https://www.youtube.com/@MC28daDude">View on my channel</a>
         </div>
     </div>
+
+    <script>
+        const searchBar = document.getElementById('searchbar');
+        const sections = document.querySelectorAll('.section');
+
+        searchBar.addEventListener('input', () => {
+            const query = searchBar.value.toLowerCase();
+
+            sections.forEach(section => {
+                let hasVisibleCard = false;
+
+                const cards = section.querySelectorAll('.card');
+                cards.forEach(card => {
+                    const title = card.querySelector('h2')?.innerText.toLowerCase() || "";
+                    if (title.includes(query)) {
+                        card.style.display = 'block';
+                        hasVisibleCard = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // hide section if no matching cards
+                section.style.display = hasVisibleCard ? 'block' : 'none';
+            });
+        });
+    </script>
+
 </body>
 
 </html>
