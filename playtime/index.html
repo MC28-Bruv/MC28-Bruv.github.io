@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url(https://raw.githubusercontent.com/MC28-Bruv/MC28-Bruv.github.io/refs/heads/main/playtime/playtimeBG.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: cursive;
+            position: relative;
+        }
+
+        /* Slight scanline overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.15) 0px,
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 2px);
+            mix-blend-mode: multiply;
+            z-index: 9999;
+        }
+
+        /* Slight VHS color separation / blur */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: none;
+            z-index: 9998;
+            animation: vhsShift 2s infinite;
+        }
+
+        @keyframes vhsShift {
+            0% {
+                transform: translateX(0);
+                filter: contrast(1) saturate(1);
+            }
+
+            20% {
+                transform: translateX(-1px);
+                filter: contrast(1.1) saturate(1.2);
+            }
+
+            40% {
+                transform: translateX(1px);
+                filter: contrast(0.9) saturate(0.8);
+            }
+
+            60% {
+                transform: translateX(-2px);
+            }
+
+            80% {
+                transform: translateX(2px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1,
+        h2 {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            color: #ff0066;
+            /* Hot pink headers */
+            text-shadow: 2px 2px #00ffcc;
+            /* Neon shadow */
+        }
+
+        p {
+            background-color: #ffff99;
+            border: 3px dashed #ff3300;
+            padding: 8px;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        img {
+            border: 5px ridge #33ccff;
+            background-color: white;
+            padding: 3px;
+        }
+
+        a {
+            color: #0000ff;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ff0000;
+            text-decoration: wavy underline;
+        }
+
+        /* Fun rainbow separators */
+        hr {
+            border: 0;
+            height: 6px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        /* Boxy 90s-style panels */
+        div {
+            margin: 20px auto;
+            padding: 10px;
+            border: 4px groove #ff66cc;
+            background-color: #ffffffdd;
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="text-align: center;">What time is it?</p>
+    <img src="https://raw.githubusercontent.com/MC28-Bruv/MC28-Bruv.github.io/refs/heads/main/playtime/Playtime_Logo.png" alt="Playtime CO." width="500" height="175" class=center>
+    <div> <!--History-->
+        <h1>History</h1>
+        <p title="This text has been redacted by request of a Playtime CO. executive.">█████ ██████ ████████ ██████ ██████ █████ ███████████ ███████ █████ ████ ████ █ ██████ ████████. ████████ ██████ ████████ ███████ ████████ █████ ████ ███ ████ ████. ████ █████ █████ █████ █ █ ██████ ███ ██████ ███ ██████ ███. ██████ ███████ ███ ██ ███ █ ███ ██████ ██████.</p>
+    </div>
+    <div> <!--Meet the Characters-->
+        <h1>Meet the Characters!</h1>
+        <div> <!--Poppy-->
+            <img src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/blob/main/playtime/poppy_00.png?raw=true" alf="Poppy Icon" width="150" height="150" class=center>
+            <h2>Poppy Playtime</h2>
+            <p>The breakout success for the fledgling Playtime Company, Poppy was a revolutionary toy fitted with a voice box, allowing children worldwide to talk to their little dolly for the first time ever. Though it’s been decades since her release, our little Poppy remains near and dear to hearts everywhere. In many ways, it’s her warmth and care that remains at the foundation of all we do here at the Playtime Company.</p>
+        </div>
+        <div> <!--Mother.-->
+            <img src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/blob/main/playtime/mommy_00.png?raw=true" alf="Mommy Icon" width="150" height="150" class=center>
+            <h2>Mommy Long Legs</h2>
+            <p>The first in a set of family-based toys using Playtime’s patented elastic plastic, Mommy Long Legs bends, stretches and pulls however you want! With so much fun wrapped into one little package, you’ll want to keep her around forever. And believe us, she’ll want to keep YOU too.</p>
+        </div>
+        <div> <!--Boxy-->
+            <img src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/blob/main/playtime/boxy_00.png?raw=true" alf="Boxy Icon" width="150" height="150" class=center>
+            <h2>Boxy Boo</h2>
+            <p>Though tucked into a box, its love can’t be contained. With springy limbs, little marble eyes, and a cubical head that splits open like a ring box, Boxy is every bit the cutie-pie children can fall in love with. But be warned, he might surprise you from time to time (don’t worry, that’s by design).</p>
+        </div>
+        <div> <!--DogDay-->
+            <img src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/blob/main/playtime/dogday_00.png?raw=true" alf="DogDay Icon" width="150" height="150" class=center>
+            <h2>DogDay</h2>
+            <p>This is DogDay, the sunny, strong, and determined leader of our critters! Each trusts him to find the bright side in any situation, and to have a friendly word of encouragement should they feel down. He'll always keep his friends going, no matter what.</p>
+        </div>
+        <div> <!--Doey-->
+            <img src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/blob/main/playtime/doey_00.png?raw=true" alf="Doey Icon" width="150" height="150" class=center>
+            <h2>Doey</h2>
+            <p>Originally hitting the market in the late 1950s, Doey Dough was Playtime’s second major commercial hit, and has been periodically revamped and reinvigorated for each new decade. With Doey Dough, you can re-create your favorite characters or let your imagination run wild (if you want to keep it as Doey, we promise we won’t judge).</p>
+        </div>
+    </div>
+    <div> <!--Recent News-->
+        <h1>Recent News</h1>
+        <div style="outline-width: 5px; outline-style: groove; outline-color: white;">
+            <h2>Playtime CO. is being shut down</h2>
+            <p>Due to an unexpected incident, an executive at Playtime CO. is ceasing all operations and closing the factory by August 9th this year.</p>
+        </div>
+        <div style="outline-width: 5px; outline-style: groove; outline-color: white;">
+            <h2>Itty Critters taken off shelves</h2>
+            <p>The Itty Critters line has been taken off shelves due to a legal incident using them, which is not affiliated with Playtime CO. in any way.</p>
+        </div>
+        <div style="outline-width: 5px; outline-style: groove; outline-color: white;">
+            <h2>Boogie Bot on shelves</h2>
+            <p>Playtime CO's latest toy Boogie Bot has hit shelves and is a major success!</p>
+        </div>
+    </div>
+    <p style="text-align: center; color: gray">© 1995 Playtime Company</p>
+</body>
+
+</html>
