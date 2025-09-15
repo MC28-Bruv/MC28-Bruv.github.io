@@ -133,6 +133,27 @@
 </head>
 
 <body>
+        <!-- Play Music Button -->
+<div style="text-align: center; margin: 20px 0;">
+    <button id="playMusicBtn" style="font-family: 'Comic Sans MS', cursive; font-size: 18px; padding: 10px 20px; cursor: pointer;">
+        ▶ Play Tape
+    </button>
+</div>
+
+<!-- Background Music -->
+<audio id="backgroundMusic" loop>
+    <source src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/raw/refs/heads/main/playtime/itsplaytime.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    const audio = document.getElementById('backgroundMusic');
+    document.getElementById('playMusicBtn').addEventListener('click', () => {
+        audio.volume = 0.4; // optional for VHS vibe
+        audio.play();
+        document.getElementById('playMusicBtn').style.display = 'none'; // hide button
+    });
+</script>
     <p style="text-align: center;">What time is it?</p>
     <img src="https://raw.githubusercontent.com/MC28-Bruv/MC28-Bruv.github.io/refs/heads/main/playtime/Playtime_Logo.png" alt="Playtime CO." width="500" height="175" class=center>
     <div> <!--History-->
@@ -183,10 +204,6 @@
         </div>
     </div>
     <p style="text-align: center; color: gray">© 1995 Playtime Company</p>
-    <audio autoplay loop>
-        <source src="https://github.com/MC28-Bruv/MC28-Bruv.github.io/raw/refs/heads/main/playtime/itsplaytime.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
 </body>
 
 </html>
